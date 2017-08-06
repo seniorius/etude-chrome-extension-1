@@ -1,3 +1,18 @@
+// CodeMirror
+CodeMirror.keyMap.default["Shift-Tab"] = "indentLess";
+CodeMirror.keyMap.default["Tab"]       = "indentMore";
+
+var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+  mode: "markdown",
+  extraKeys: {
+      "Enter": "newlineAndIndentContinueMarkdownList"
+  },
+
+  lineWrapping: true,
+  theme: "monokai"
+})
+
+// jQuery プレビューモード、編集モードの切り替え
 var $tabs = $('.tabs .tab');
 
 $tabs.click(function(event) {
@@ -6,11 +21,6 @@ $tabs.click(function(event) {
   $(event.target).addClass(selectedClass);
 });
 
-var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-  mode: { name: "gfm" },
-  lineNumbers: true,
-  theme: "default"
-})
 
 $(".preview-tab").click(function(event) {
   var html = markdownit().render(editor.getValue())
