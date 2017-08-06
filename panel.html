@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<title>Link Maker</title>
+<meta charset="utf-8">
+  <script src="asset/jquery.js"></script>
+  <script src="asset/codemirror.js"></script>
+  <link  href="asset/codemirror.css" rel="stylesheet" type="text/css">
+  <script src="asset/codemirror-markdown.js"></script>
+  <script src="asset/markdown-it.min.js"></script>
+  <link rel="stylesheet" href="panel.css" type="text/css">
+</head>
+<body>
+
+  <div class="tabs">
+    <div class="tab source-tab is-tab-selected">source</div>
+    <div class="tab preview-tab">preview</div>
+  </div>
+
+  <div id=source>
+    <form><textarea id="code" name="code">
+GitHub Flavored Markdown
+========================
+
+Everything from markdown plus GFM features:
+
+## URL autolinking
+
+Underscores_are_allowed_between_words.</textarea></form></div>
+
+  <div id=preview>
+  </div>
+
+  <script src="panel.js"></script>
+
+</body>
+</html>
